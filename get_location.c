@@ -14,7 +14,7 @@ char *get_location(char *command){
         command_length = strlen(command);
 
 
-        /* Let's break down the path variable and get all the directories available*/
+        /* break down the path variable and get all the directories available*/
         path_token = strtok(path_copy, ":");
 
         while(path_token != NULL){
@@ -28,7 +28,7 @@ char *get_location(char *command){
             strcat(file_path, command);
             strcat(file_path, "\0");
 
-            /* let's test if this file path actually exists and return it if it does, otherwise try the next directory */
+            /* test if this file path actually exists and return it if it does, otherwise try the next directory */
             if (stat(file_path, &buffer) == 0){
                 /* return value of 0 means success implying that the file_path is valid*/
 
